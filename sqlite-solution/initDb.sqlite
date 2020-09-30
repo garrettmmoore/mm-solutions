@@ -1,0 +1,34 @@
+CREATE TABLE companies (
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(40) NOT NULL
+);
+
+CREATE TABLE cars (
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(40) NOT NULL,
+  companyId INTEGER NOT NULL REFERENCES companies(id)
+);
+
+CREATE TABLE events (
+	id INTEGER PRIMARY KEY,
+	name VARCHAR(40) NOT NULL
+);
+
+CREATE TABLE eventParticipants (
+	carId INTEGER NOT NULL REFERENCES cars (id),
+	eventId INTEGER NOT NULL REFERENCES events (id),
+	PRIMARY KEY (carId, eventId)
+);
+
+INSERT INTO companies(id, name) VALUES(1, 'Ford');
+INSERT INTO companies(id, name) VALUES(2, 'General Motors');
+INSERT INTO cars(id, name, companyId) VALUES(1, 'Aspire-Sedan', 1);
+INSERT INTO cars(id, name, companyId) VALUES(2, 'EcoSport-SUV', 1);
+INSERT INTO cars(id, name, companyId) VALUES(3, 'Mustang-Convertible', 1);
+INSERT INTO cars(id, name, companyId) VALUES(4, 'Chevrolet-Sedan', 2);
+INSERT INTO cars(id, name, companyId) VALUES(5, 'GMC-Terrain', 2);
+INSERT INTO events(id, name) VALUES(1, 'Sedan Event');
+INSERT INTO events(id, name) VALUES(2, 'SUV Event');
+INSERT INTO events(id, name) VALUES(3, 'Convertible Event');
+INSERT INTO eventParticipants(carId, eventId) VALUES(1, 1);
+INSERT INTO eventParticipants(carId, eventId) VALUES(4, 1);

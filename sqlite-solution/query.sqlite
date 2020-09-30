@@ -1,0 +1,7 @@
+SELECT
+	companies.name AS CompanyName,
+	COUNT(cars.id) AS Count
+FROM
+	cars
+	INNER JOIN eventParticipants ON eventParticipants.carId = cars.id
+	INNER JOIN companies ON companies.id = cars.companyId;
