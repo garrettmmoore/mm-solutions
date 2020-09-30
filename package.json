@@ -1,0 +1,21 @@
+{
+  "name": "mm-frontend-solutions",
+  "version": "1.0.0",
+  "description": "MM solutions",
+  "main": "index.js",
+  "scripts": {
+    "html-css-solution": "npx http-server ./html-css-solution -a localhost",
+    "nodejs-solution": "cd ./nodejs-solution && node main.js 68"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garrettmmoore/mm-frontend-solutions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/garrettmmoore/mm-frontend-solutions/issues"
+  },
+  "homepage": "https://github.com/garrettmmoore/mm-frontend-solutions#readme"
+}
